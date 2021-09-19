@@ -1,0 +1,334 @@
+/* ==UserStyle==
+@name           YouTube Custom UI Cleaner
+@namespace      github.com/openstyles/stylus
+@version        0.0.3
+@description    Show / Hide ANY useless and unwanted UI elements. Togglable list of all UI elements, hide things you never use, keep everything else untouched. Work in progress. Very first version. Still figuring stuff out. Updates will come.
+@author         miwoj
+@preprocessor		stylus
+
+
+
+
+@var select label1 "BUTTONS" ["_"]
+@var checkbox --voiceSearchButton "- Voice Search button" 0
+@var checkbox --uploadVideoButton "- Upload Video button" 0
+@var checkbox --youtubeAppsButton "- YouTube Apps button" 0
+@var checkbox --bellNotificationsButton "- Bell Notifications button" 0
+@var checkbox --subscribeButton "- Subscribe button" 1
+@var checkbox --miniPlayerButton "- Mini Player button" 0
+@var checkbox --joinPaidMembershipButton "- Join Paid Membership button" 0
+@var checkbox --thumbHoverButtons "- Thumb Hover buttons (watch later, add to queue)" 0
+@var checkbox --likeDislikeButtons "- Like / Dislike buttons" 1
+@var checkbox --shareButton "- Share button" 0
+@var checkbox --saveButton "- Save button" 0
+@var checkbox --showReportTranscriptButton "- (...) Report Transcript button" 0
+
+
+@var select label2 "NAVIGATION" ["_"]
+@var checkbox --miniHiddenLeftMenu "- Mini Left Menu when hidden" 0
+@var checkbox --tagsHorizontalBar "- Horizontal Tag bar" 0
+
+
+@var select label3 "PANELS" ["_"]
+@var checkbox --donationPanel "- Donations panel" 0
+@var checkbox --ytGameInfo "- Game Info, Youtube Gaming panel" 0
+@var checkbox --channelBanner "- Channel banner (refresh after change)" 0
+@var checkbox --commentSection "- Comment section" 1
+
+
+@var select label4 "ADS" ["_"]
+@var checkbox --adsBanners "- Ads: Banners" 0
+@var checkbox --adsMovies "- Ads: Buy or Rent movies" 0
+
+
+@var select label5 "MISC" ["_"]
+@var checkbox --ytLogo "- YouTube logo (clickable when hidden)" 1
+@var checkbox --hashtagList "- Hashtag list on title" 0
+
+==/UserStyle== */
+
+@-moz-document domain("youtube.com") {
+	
+	/* youtube clean ui*/
+
+	/* do zrobienia:
+		- clip, share, other icons ???
+
+		- left menu elements
+		- theater mode
+		- info icon top right
+		- header bg transparency
+		- vid shadow gradient
+		- subtitles height
+		- subtitles size
+	*/
+	
+	/* (...) Show Report and Transcript button */
+	if !--showReportTranscriptButton
+	{
+		#info-contents yt-icon-button#button.dropdown-trigger
+		{
+			display: none !important;
+		}
+	}		
+	
+	/* Save button */
+	if !--saveButton
+	{
+		#info-contents #top-level-buttons-computed ytd-button-renderer:nth-child(4)
+		{
+			display: none !important;
+		}
+	}	
+	
+	/* Share button */
+	if !--shareButton
+	{
+		#info-contents #top-level-buttons-computed ytd-button-renderer:nth-child(3)
+		{
+			display: none !important;
+		}
+	}		
+	
+	/* Like Dislike buttons */
+	if !--likeDislikeButtons
+	{
+		#info-contents #top-level-buttons-computed ytd-toggle-button-renderer:nth-child(1),
+		#info-contents #top-level-buttons-computed ytd-toggle-button-renderer:nth-child(2),
+		#info-contents #sentiment.ytd-video-primary-info-renderer
+		{
+			display: none !important;
+		}
+	}	
+	
+	/* Subscribe button */
+	if !--subscribeButton
+	{
+		#subscribe-button
+		{
+			display: none !important;
+		}
+	}		
+	
+	/* Comment section */
+	if !--commentSection
+	{
+		#comments
+		{
+			display: none !important;
+		}
+		#primary
+		{
+			margin-bottom: 50px;
+		}
+	}	
+	
+	/* Hover Overlay Buttons */
+	if !--thumbHoverButtons
+	{
+		#hover-overlays.ytd-thumbnail
+		{
+			display: none !important;
+		}
+	}
+		
+	/* Youtube Logo */
+	if !--ytLogo
+	{
+		ytd-topbar-logo-renderer#logo.ytd-masthead svg.yt-icon,
+		ytd-topbar-logo-renderer#logo #country-code.ytd-topbar-logo-renderer
+		{
+			display: none !important;
+		}
+	}
+
+
+	/* Voice Search Button */
+	if !--voiceSearchButton
+	{
+		#voice-search-button.ytd-masthead
+		{
+			display: none !important;
+		}
+	}
+	
+	/* Upload Video Button */
+	if !--uploadVideoButton
+	{
+		ytd-topbar-menu-button-renderer.ytd-masthead:nth-child(1)
+		{
+			display: none !important;
+		}
+	}
+
+	/* Youtube Apps Button */
+	if !--youtubeAppsButton
+	{
+		ytd-topbar-menu-button-renderer.ytd-masthead:nth-child(2)
+		{
+			display: none !important;
+		}
+	}
+	
+	/* Bell Notifications Button */
+	if !--bellNotificationsButton
+	{
+		#notification-preference-button
+		{
+			display: none !important;
+		}
+	}
+	
+	
+	/* Mini Player Button */
+	if !--miniPlayerButton
+	{
+		button.ytp-miniplayer-button
+		{
+			display: none !important;
+		}
+	}
+	
+	
+	
+	
+	/* Tags Horizontal Bar (main header and right related list) */
+	if !--tagsHorizontalBar
+	{	
+		ytd-feed-filter-chip-bar-renderer
+		{
+
+			display: none !important;
+		}
+		
+		yt-related-chip-cloud-renderer.ytd-watch-next-secondary-results-renderer
+		{
+
+			display: none !important;
+		}
+		
+		#items.ytd-watch-next-secondary-results-renderer ytd-compact-video-renderer:nth-child(1)
+		{
+			margin-top: 0px !important;
+		}
+	}
+	
+	
+	/* Hashtag List */
+	if !--hashtagList
+	{	
+		#info-contents yt-formatted-string.super-title,
+		#info-contents yt-icon.super-title-icon
+		{
+
+			display: none !important;
+		}
+		
+	}
+	
+	
+	/* Mini Hidden Left Menu */
+	if !--miniHiddenLeftMenu
+	{
+		ytd-mini-guide-renderer
+		{
+			display: none !important;
+		}
+		ytd-app[mini-guide-visible] ytd-page-manager.ytd-app
+		{
+			margin-left: 0px !important;
+		}		
+	}
+	
+	
+	/* Ads Banners */
+	if !--adsBanners
+	{
+		#masthead-ad
+		{			
+			display: none !important;
+		}
+		#related #player-ads
+		{			
+			display: none !important;
+		}
+	}
+	
+	/* Ads Movies */
+	if !--adsMovies
+	{
+		#contents ytd-compact-movie-renderer
+		{
+			display: none !important;			
+		}		
+	}	
+	
+
+	/* Ads Items (unfinished) */
+	ytd-display-ad-renderer
+	{
+		display: none !important;	
+	}
+	
+	
+	
+	/* Join Paid Membership Button */
+	if !--joinPaidMembershipButton
+	{
+		#sponsor-button
+		{
+			display: none !important;
+		}
+	}
+
+	
+	/* Donation Panel */
+	if !--donationPanel
+	{
+		#donation-shelf
+		{
+			display: none !important;
+		}
+	}
+	
+	/* Game Info, Youtube Gaming panel */
+	if !--ytGameInfo
+	{
+		ytd-metadata-row-container-renderer.ytd-video-secondary-info-renderer
+		{
+			display: none !important;
+		}
+	}	
+	
+	/* Channel Banner */
+	if !--channelBanner
+	{
+		#channel-header,
+		ytd-c4-tabbed-header-renderer
+		{
+			--yt-channel-banner: none !important;
+		}
+		
+		.banner-visible-area
+		{
+			display: none !important;
+			height: 0px !important;
+		}
+	}		
+	
+	
+
+
+	
+	
+	
+	
+	
+	
+
+	
+	
+	
+	
+	
+}
