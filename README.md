@@ -1,6 +1,6 @@
 # YouTube-Custom-UI-Cleaner
 
-Custom css userstyle for **youtube.com** for [Stylus browser extension](https://add0n.com/stylus.html)
+Custom css userstyle for **youtube.com** for [Stylus browser addon](https://add0n.com/stylus.html)
 
 Show / Hide ANY useless and unwanted UI elements. Keep what you actually need. 
 Less pointless things on your screen!
