@@ -1,5 +1,7 @@
 # YouTube-Custom-UI-Cleaner
 
+Stylus userstyle.
+
 Show / Hide ANY useless and unwanted UI elements. 
 
 Togglable list of all UI elements, hide things you never use, keep everything else untouched. 
