@@ -35,4 +35,5 @@ If there is some youtube ui element i missed you want hidden (or customized in o
 
 # Support
 questions, suggestions, bugs:
+
 https://github.com/gmiwoj/YouTube-Custom-UI-Cleaner/issues
