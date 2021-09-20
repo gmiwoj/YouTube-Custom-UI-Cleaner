@@ -32,3 +32,7 @@ Still figuring stuff out.
 Updates are coming. More UI elements will get progressively added.
 If there is some youtube ui element i missed you want hidden (or customized in other way) let me know, i can do that.
 
+
+# Support
+questions, suggestions, bugs:
+https://github.com/gmiwoj/YouTube-Custom-UI-Cleaner/issues
