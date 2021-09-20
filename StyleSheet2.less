@@ -1,0 +1,29 @@
+﻿body {
+}
+
+@-moz-document domain("youtube.com") {
+    /* youtube clean ui*/
+    /* do zrobienia:
+		- clip, share, other icons ???
+
+		- left menu elements
+		- theater mode
+		- info icon top right
+		- header bg transparency
+		- vid shadow gradient
+		- subtitles height
+		- subtitles size
+	*/
+    /* (...) Show Report and Transcript button */
+    if !--showReportTranscriptButton {
+        #info-contents yt-icon-button#button.dropdown-trigger {
+            display: none !important;
+        }
+    }
+    /* Save button */
+    if !--saveButton {
+        #info-contents #top-level-buttons-computed ytd-button-renderer:nth-child(4) {
+            display: none !important;
+        }
+    }
+}
