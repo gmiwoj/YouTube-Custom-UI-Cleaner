@@ -1,0 +1,10 @@
+{
+  "version": "0.2.1",
+  "tasks": [
+    {
+      "taskLabel": "zadanie-ui-cleaner-preview",
+      "appliesTo": "images/ui-cleaner-preview.png",
+      "type": "launch"
+    }
+  ]
+}

@@ -1,13 +1,16 @@
 /* ==UserStyle==
 @name           YouTube Custom UI Cleaner
-@namespace      github.com/openstyles/stylus
-@version        0.0.3
+@namespace      github.com/gmiwoj/YouTube-Custom-UI-Cleaner
+@version        0.0.31
 @description    Show / Hide ANY useless and unwanted UI elements. Togglable list of all UI elements, hide things you never use, keep everything else untouched. Work in progress. Very first version. Still figuring stuff out. Updates will come.
-@author         miwoj
-@preprocessor		stylus
+@author         miwoj (https://github.com/gmiwoj)
+@homepageURL    https://github.com/gmiwoj/YouTube-Custom-UI-Cleaner
+@supportURL     https://github.com/gmiwoj/YouTube-Custom-UI-Cleaner/issues
+@updateURL      https://github.com/gmiwoj/YouTube-Custom-UI-Cleaner/blob/c0d42f32dc18c051bc40ceaaa59e316a4d810103/youtube-custom-ui-cleaner.user.css
+@preprocessor	stylus
 
 
-
+@var select label0 "TIP : this is a makeshift label, it doesnt do anything" ["_"]
 
 @var select label1 "BUTTONS" ["_"]
 @var checkbox --voiceSearchButton "- Voice Search button" 0
@@ -315,20 +318,5 @@
 			height: 0px !important;
 		}
 	}		
-	
-	
 
-
-	
-	
-	
-	
-	
-	
-
-	
-	
-	
-	
-	
 }
