@@ -13,6 +13,8 @@
 @var select label0 "TIP : this is a makeshift label, it doesnt do anything" ["_"]
 
 @var select label1 "BUTTONS" ["_"]
+@var checkbox --clipButton "- Clip button" 0
+@var checkbox --downloadButton "- Download button" 0
 @var checkbox --voiceSearchButton "- Voice Search button" 0
 @var checkbox --uploadVideoButton "- Upload Video button" 0
 @var checkbox --youtubeAppsButton "- YouTube Apps button" 0
@@ -23,7 +25,7 @@
 @var checkbox --thumbHoverButtons "- Thumb Hover buttons (watch later, add to queue)" 0
 @var checkbox --likeDislikeButtons "- Like / Dislike buttons" 1
 @var checkbox --shareButton "- Share button" 0
-@var checkbox --saveButton "- Save button" 0
+@var checkbox --saveButton "- Save button" 1
 @var checkbox --showReportTranscriptButton "- (...) Report Transcript button" 0
 
 
@@ -75,10 +77,26 @@
 		}
 	}		
 	
+    if !--clipButton
+    {
+        #info-contents #top-level-buttons-computed ytd-button-renderer:nth-child(5)
+        {
+            display: none !important;
+        }
+    }
+    
+    if !--downloadButton
+    {
+        ytd-download-button-renderer
+        {
+            display: none !important;
+        }
+    }
+    
 	/* Save button */
 	if !--saveButton
 	{
-		#info-contents #top-level-buttons-computed ytd-button-renderer:nth-child(4)
+		#info-contents #top-level-buttons-computed ytd-button-renderer:nth-child(6)
 		{
 			display: none !important;
 		}
